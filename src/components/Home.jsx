@@ -124,8 +124,7 @@ const Home = (props) => {
             var myDate = new Date(createdAt.seconds * 1000);
             var date = String(myDate).slice(0, 21);
         }
-        var myDate = new Date(createdAt.seconds * 1000);
-        var date = String(myDate).slice(0, 21);
+
         const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
         const textClass = uid === auth.currentUser.uid ? 'sent2' : 'received2';
 
