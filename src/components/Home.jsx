@@ -33,7 +33,7 @@ const Home = (props) => {
         if (auth.currentUser.isAnonymous) {
             data['isAnonymus'] = auth.currentUser.isAnonymous;
             data['uID'] = auth.currentUser.uid;
-            await fetch("http://192.168.1.32:8000/api/login", {
+            await fetch("https://tuck-chat-server.herokuapp.com/api/login", {
                 method: "POST",
                 mode: 'cors',
                 cache: 'no-cache',
@@ -55,7 +55,7 @@ const Home = (props) => {
             data['uID'] = auth.currentUser.uid;
             data['displayName'] = auth.currentUser.displayName;
             data['email'] = auth.currentUser.email;
-            await fetch("http://192.168.1.32:8000/api/login", {
+            await fetch("https://tuck-chat-server.herokuapp.com/api/login", {
                 method: "POST",
                 mode: 'cors',
                 cache: 'no-cache',
