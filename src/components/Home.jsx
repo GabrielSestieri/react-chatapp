@@ -72,7 +72,11 @@ const Home = (props) => {
 
         }
     }
-
+    useEffect(() => {
+                if (webhook.current) {
+                    scrollToBottom();
+                }
+            })
     function ChatRoom() {
         const webhook = useRef();
         const messagesRef = firestore.collection('messages');
@@ -94,11 +98,6 @@ const Home = (props) => {
             })
 
             setFormValue('');
-            useEffect(() => {
-                if (webhook.current) {
-                    scrollToBottom();
-                }
-        })
         }
 
         const scrollToBottom = () => {
