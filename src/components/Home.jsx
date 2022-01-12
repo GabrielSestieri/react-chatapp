@@ -25,8 +25,6 @@ const Home = (props) => {
         }
     });
 
-    console.log("***** IS ANON BELOW *****")
-    console.log(auth.currentUser.isAnonymous)
 
     async function logIn() {
         var data = {};
