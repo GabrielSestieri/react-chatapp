@@ -123,7 +123,6 @@ const Home = (props) => {
 
     function ChatMessage(props) {
         const { text, uid, photoURL, createdAt } = props.message;
-        console.log(createdAt)
         var myDate = new Date(createdAt.seconds * 1000);
         var date = String(myDate).slice(0, 21);
         const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
