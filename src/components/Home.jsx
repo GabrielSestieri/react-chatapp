@@ -79,11 +79,7 @@ const Home = (props) => {
         const query = messagesRef.orderBy('createdAt');
         const [messages] = useCollectionData(query, { idField: 'id' });
         const [formValue, setFormValue] = useState('');
-        useEffect(() => {
-            if (webhook.current) {
-                scrollToBottom();
-            }
-        })
+        
 
         const sendMessage = async (e) => {
             e.preventDefault();
@@ -98,6 +94,11 @@ const Home = (props) => {
             })
 
             setFormValue('');
+            useEffect(() => {
+                if (webhook.current) {
+                    scrollToBottom();
+                }
+        })
         }
 
         const scrollToBottom = () => {
