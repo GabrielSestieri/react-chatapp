@@ -72,18 +72,18 @@ const Home = (props) => {
 
         }
     }
-    useEffect(() => {
-                if (webhook.current) {
-                    scrollToBottom();
-                }
-            })
+
     function ChatRoom() {
         const webhook = useRef();
         const messagesRef = firestore.collection('messages');
         const query = messagesRef.orderBy('createdAt');
         const [messages] = useCollectionData(query, { idField: 'id' });
         const [formValue, setFormValue] = useState('');
-        
+        // useEffect(() => {
+        //     if (webhook.current) {
+        //         scrollToBottom();
+        //     }
+        // })
 
         const sendMessage = async (e) => {
             e.preventDefault();
@@ -103,6 +103,7 @@ const Home = (props) => {
         const scrollToBottom = () => {
             webhook.current.scrollIntoView({ behavior: 'smooth' });
         }
+        useEffect(scrollToBottom, [messagesRef])
 
         return (
             <>
